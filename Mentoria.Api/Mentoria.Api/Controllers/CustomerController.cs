@@ -1,4 +1,4 @@
-﻿using Mentoria.Shared;
+﻿using Mentoria.Application.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mentoria.Api.Controllers
@@ -11,7 +11,7 @@ namespace Mentoria.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<CustomerDto>> Get()
         {
-            // TODO: Implement GET method to retrieve all resources.
+            // TODO: TEST Implement GET method to retrieve all resources.
             return Ok();
         }
 
@@ -48,5 +48,5 @@ namespace Mentoria.Api.Controllers
         }
     }
 
-}
+
 }
