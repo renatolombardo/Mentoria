@@ -1,4 +1,5 @@
 ﻿using Mentoria.Application.Dtos;
+using Mentoria.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mentoria.Api.Controllers
@@ -8,11 +9,18 @@ namespace Mentoria.Api.Controllers
     public class CustomerController : ControllerBase
     {
 
-        [HttpGet]
-        public ActionResult<IEnumerable<CustomerDto>> Get()
+        private readonly ICustomerService _customerService;
+
+        public CustomerController(ICustomerService customerService)
         {
-            // TODO: TEST Implement GET method to retrieve all resources.
-            return Ok();
+            _customerService = customerService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CustomerDto>>> Get()
+        {
+            var customer = await _customerService.GetAllAsync();
+            return Ok(customer);
         }
 
 
@@ -48,5 +56,5 @@ namespace Mentoria.Api.Controllers
         }
     }
 
-
 }
+
