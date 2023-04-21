@@ -15,6 +15,11 @@ namespace Mentoria.Infrastructure
 
         }
 
+        public DataContext(DbContextOptions options) : base(options)
+        {
+            
+        }
+
         public DataContext(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -25,11 +30,7 @@ namespace Mentoria.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var conn = _configuration.GetConnectionString("MyConnection");
-
-            Console.WriteLine(conn);
-
-            optionsBuilder.UseSqlite(conn);
+            //optionsBuilder.UseSqlite("Data Source=mydb.db");
 
             base.OnConfiguring(optionsBuilder);
         }

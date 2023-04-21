@@ -1,0 +1,9 @@
+global using Xunit;
+global using AutoFixture;
+global using Mentoria.Application.Services;
+global using Mentoria.Domain;
+global using Mentoria.Domain.Interfaces;
+global using Mentoria.Infrastructure;
+global using Mentoria.Infrastructure.Repositories;
+global using Microsoft.EntityFrameworkCore;
+global using FluentAssertions;
